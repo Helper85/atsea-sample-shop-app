@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: helperatseasampleshopapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helperatseasampleshopapp
+  template:
+    metadata:
+      labels:
+        app: helperatseasampleshopapp 
+    spec:
+      containers:
+        - name: helperatseasampleshopapp 
+          image: jonghocontainer.azurecr.io/helperatseasampleshopapp
+          ports:
+          - containerPort: 80
